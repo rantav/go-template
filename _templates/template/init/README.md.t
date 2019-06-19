@@ -1,4 +1,8 @@
-# Welcome to go-template
+---
+to: README.md
+---
+
+# Welcome to <%= name %>
 
 ## Using Hygen
 
