@@ -3,15 +3,12 @@
 ## Using Hygen
 
 Make this your own (call it 'amazing'):
+    $ HYGEN_OVERWRITE=1 hygen template init amazing
 
-    $ hygen template init amazing
-    ✔      exists: go.mod. Overwrite? (y/N):  (y/N) · true
-       added: go.mod
-    ✔      exists: main.go. Overwrite? (y/N):  (y/N) · true
+    Loaded templates: _templates
+        added: go.mod
         added: main.go
-    ✔      exists: README.md. Overwrite? (y/N):  (y/N) · true
         added: README.md
-    ✔      exists: cmd/root.go. Overwrite? (y/N):  (y/N) · true
         added: cmd/root.go
 
 Add commands:
