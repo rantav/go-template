@@ -32,13 +32,11 @@ Clone the template and update remotes
 
 Use Hygen to initialize your code
 
+    # Templatize
     $ HYGEN_OVERWRITE=1 hygen template init my-go-project
 
-    Loaded templates: _templates
-        added: go.mod
-        added: main.go
-        added: README.md
-        added: cmd/root.go
+    # Build to validate
+    make
 
 
 Add commands:
