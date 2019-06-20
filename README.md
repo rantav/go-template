@@ -1,15 +1,45 @@
 # Welcome to go-template
 
-## Using Hygen
+This project will jumpstart your Golang project and provide a set of tempaltes you may use to keep your code tidy and
+consistent.
 
-Make this your own (call it 'amazing'):
-    $ HYGEN_OVERWRITE=1 hygen template init amazing
+## Using Hygen
+We use the templating tool called Hygen. https://www.hygen.io
+
+### Installing Hygen
+See here https://www.hygen.io/quick-start
+
+But in short:
+
+```
+$ brew tap jondot/tap
+$ brew install hygen
+```
+
+### Cloning and getting started
+
+Clone the template and update remotes
+
+    # clone the template project
+    git clone git@gitlab.appsflyer.com:Architecture/go-template.git my-go-project
+    cd my-go-project
+
+    # rename the tempaltes remote
+    git remote rename origin template
+
+    # add the project repo
+    git remote add git@gitlab.appsflyer.com:rantav/my-go-project.git
+
+Use Hygen to initialize your code
+
+    $ HYGEN_OVERWRITE=1 hygen template init my-go-project
 
     Loaded templates: _templates
         added: go.mod
         added: main.go
         added: README.md
         added: cmd/root.go
+
 
 Add commands:
 
