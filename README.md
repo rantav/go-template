@@ -28,7 +28,7 @@ Clone the template and update remotes
     git remote rename origin template
 
     # add the project repo
-    git remote add git@gitlab.appsflyer.com:rantav/my-go-project.git
+    git remote add origin git@gitlab.appsflyer.com:rantav/my-go-project.git
 
 Use Hygen to initialize your code
 
