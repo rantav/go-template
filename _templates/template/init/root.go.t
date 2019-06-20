@@ -19,3 +19,11 @@ var rootCmd = &cobra.Command{
 		// Do Stuff Here
 	},
 }
+
+// Execute the current command
+func Execute() {
+       if err := rootCmd.Execute(); err != nil {
+               fmt.Println(err)
+               os.Exit(1)
+       }
+}
