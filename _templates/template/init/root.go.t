@@ -13,9 +13,17 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "<%= name %>",
-	Short: "A <%= name %> project",
-	Long:  `The long description`,
+	Short: "Service <%= name %>",
+	Long:  `<%= description %>`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 	},
+}
+
+// Execute the current command
+func Execute() {
+       if err := rootCmd.Execute(); err != nil {
+               fmt.Println(err)
+               os.Exit(1)
+       }
 }

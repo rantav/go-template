@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/rantav/go-template/cmd"
+	"gitlab.appsflyer.com/Architecture/go-template/cmd"
 )
 
 func main() {
