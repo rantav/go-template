@@ -11,10 +11,8 @@ See here https://www.hygen.io/quick-start
 
 But in short:
 
-```
-$ brew tap jondot/tap
-$ brew install hygen
-```
+    $ brew tap jondot/tap
+    $ brew install hygen
 
 ### Cloning and getting started
 
