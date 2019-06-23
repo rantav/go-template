@@ -13,8 +13,8 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "<%= name %>",
-	Short: "A <%= name %> project",
-	Long:  `The long description`,
+	Short: "Service <%= name %>",
+	Long:  `<%= long_description %>`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 	},
