@@ -1,8 +1,10 @@
 ---
 message: |
-  hygen {bold init} {inverse name} \
-    --repo_path {inverse repo_path} \
-    --description {inverse description}
+  \t
+  {underline.bold Usage}
+    hygen {bold init} {inverse name} \
+      --repo_path {inverse repo_path} \
+      --description {inverse description}
 
 
   {underline.bold Synopsis}
