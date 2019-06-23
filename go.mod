@@ -1,4 +1,4 @@
-module github.com/rantav/go-template
+module gitlab.appsflyer.com/Architecture/go-template
 
 go 1.12
 

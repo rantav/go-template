@@ -2,7 +2,7 @@
 to: go.mod
 ---
 
-module github.com/rantav/<%= name %>
+module gitlab.appsflyer.com/Architecture/<%= name %>
 
 go 1.12
 

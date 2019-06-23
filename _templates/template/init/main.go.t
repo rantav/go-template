@@ -5,7 +5,7 @@ to: main.go
 package main
 
 import (
-	"github.com/rantav/<%= name %>/cmd"
+	"gitlab.appsflyer.com/Architecture/<%= name %>/cmd"
 )
 
 func main() {
