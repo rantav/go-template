@@ -20,6 +20,6 @@ test-tempalte:
 	cd $(TMP_DIR); \
 	HYGEN_OVERWRITE=1 hygen template init $(TMP_PROJECT_NAME) \
 		--repo_path=gitlab.appsflyer.com/rantav \
-		--long_description="My awesome go project" \
+		--description="My awesome go project" \
 		;\
 	make

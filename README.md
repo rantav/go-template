@@ -32,8 +32,11 @@ Clone the template and update remotes
 
 Use Hygen to initialize your code
 
+    # Learn how to use the tool
+    $ hygen init help
+
     # Templatize
-    $ HYGEN_OVERWRITE=1 hygen template init my-go-project --repo_path=gitlab.appsflyer.com/rantav
+    $ HYGEN_OVERWRITE=1 hygen template init my-go-project --repo_path=gitlab.appsflyer.com/rantav --description="My awesome go project"
 
     # Build to validate
     make

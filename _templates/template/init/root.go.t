@@ -14,7 +14,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "<%= name %>",
 	Short: "Service <%= name %>",
-	Long:  `<%= long_description %>`,
+	Long:  `<%= description %>`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 	},
