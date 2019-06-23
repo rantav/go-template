@@ -2,7 +2,7 @@
 to: go.mod
 ---
 
-module gitlab.appsflyer.com/Architecture/<%= name %>
+module <%= repo_path %>/<%= name %>
 
 go 1.12
 

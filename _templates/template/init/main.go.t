@@ -5,7 +5,7 @@ to: main.go
 package main
 
 import (
-	"gitlab.appsflyer.com/Architecture/<%= name %>/cmd"
+	"<%= repo_path %>/<%= name %>/cmd"
 )
 
 func main() {
