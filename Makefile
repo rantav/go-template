@@ -3,6 +3,9 @@ TMP_DIR=/tmp/go/$(TMP_PROJECT_NAME)
 
 all: test
 
+help:
+	hygen init help
+
 build:
 	go build ./...
 
@@ -22,4 +25,5 @@ test-tempalte:
 		--repo_path=gitlab.appsflyer.com/rantav \
 		--description="My awesome go project" \
 		;\
-	make
+	make ;\
+	tree
