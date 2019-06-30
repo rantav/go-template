@@ -1,3 +1,6 @@
+# WARNING
+This project is not maintainted. We use it internally at appsflyer, but the external (e.g. this GH version) is not maintainted. 
+
 # Welcome to go-template
 
 This project will jumpstart your Golang project and provide a set of tempaltes you may use to keep your code tidy and
