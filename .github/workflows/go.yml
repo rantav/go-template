@@ -27,13 +27,16 @@ jobs:
           GOPROXY: https://proxy.golang.org,direct
           GOPATH: /home/runner/work/go-template/go
       run: |
-        PATH=$GOPATH/bin:$PATH make test
+        export PATH=$GOPATH/bin:$PATH
+        make test
         make lint
 
 # BEGIN __DO_NOT_INCLUDE__
     - name: Test templating
       env:
           GOPROXY: https://proxy.golang.org,direct
+          GOPATH: /home/runner/work/go-template/go
       run: |
+        export PATH=$GOPATH/bin:$PATH
         make test-template
 # END __DO_NOT_INCLUDE__
