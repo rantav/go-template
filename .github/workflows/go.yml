@@ -18,9 +18,12 @@ jobs:
       with:
           path: go/src/github.com/rantav/go-template
 
-    # - name: Setup and install tools
-    #   run: |
-    #       go get -u github.com/golang/protobuf/protoc-gen-go
+    - name: Setup and install tools
+      env:
+          GOPROXY: https://proxy.golang.org,direct
+          GOPATH: /home/runner/work/go-template/go
+      run: |
+          go get -u golang.org/x/tools/cmd/goimports
 
     - name: Build and test
       env:
