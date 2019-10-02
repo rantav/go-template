@@ -20,10 +20,10 @@ GOLANGCI_LINT_VERSION := v1.18.0
 BIN_DIR := $(GOPATH)/bin
 GOLANGCI_LINT := $(BIN_DIR)/golangci-lint
 
-GIT_COMMIT := $(shell git rev-parse --short HEAD)
-GIT_COMMIT_MESSAGE := $(shell git show -s --format='%s' | tr ' ' _ | tr -d "'" )
+GIT_COMMIT := $(shell git rev-parse --short HEAD 2> /dev/null || echo "no-revision")
+GIT_COMMIT_MESSAGE := $(shell git show -s --format='%s' 2> /dev/null | tr ' ' _ | tr -d "'")
 GIT_TAG := $(shell git describe --tags 2> /dev/null || echo "no-tag")
-GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD 2> /dev/null || echo "no-branch")
 BUILD_TIME := $(shell date +%FT%T%z)
 VERSION_PACKAGE := github.com/rantav/go-template/version
 
