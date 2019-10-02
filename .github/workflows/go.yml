@@ -26,9 +26,8 @@ jobs:
       env:
           GOPROXY: https://proxy.golang.org,direct
           GOPATH: /home/runner/work/go-template/go
-          PATH: $GOPATH/bin:$PATH
       run: |
-        make test
+        PATH=$GOPATH/bin:$PATH make test
         make lint
 
 # BEGIN __DO_NOT_INCLUDE__
