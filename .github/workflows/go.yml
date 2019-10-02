@@ -15,8 +15,10 @@ jobs:
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
-  
+
     - name: Get dependencies
+      env:
+          GOPROXY: https://proxy.golang.org,direct
       run: |
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
