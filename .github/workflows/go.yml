@@ -16,6 +16,10 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
+    - name: Setup and install tools
+      run: |
+          go get -u github.com/golang/protobuf/protoc-gen-go
+
     - name: Build and test
       env:
           GOPROXY: https://proxy.golang.org,direct
@@ -23,3 +27,10 @@ jobs:
         make test
         make lint
 
+# BEGIN __DO_NOT_INCLUDE__
+    - name: Test templating
+      env:
+          GOPROXY: https://proxy.golang.org,direct
+      run: |
+        make test-template
+# END __DO_NOT_INCLUDE__
