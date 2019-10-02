@@ -23,6 +23,7 @@ jobs:
     - name: Build and test
       env:
           GOPROXY: https://proxy.golang.org,direct
+          PATH: $GOPATH/bin:$PATH
       run: |
         make test
         make lint
