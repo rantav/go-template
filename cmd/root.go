@@ -9,8 +9,8 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "go-template",
-	Short: "A tempalte project",
-	Long:  `The long description`,
+	Short: "Service go-template",
+	Long:  `A template project`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 	},

@@ -1,0 +1,5 @@
+# `/tools`
+
+Supporting tools for this project. Note that these tools can import code from the `/pkg` and `/internal` directories.
+
+Read more here https://github.com/golang-standards/project-layout/tree/master/tools

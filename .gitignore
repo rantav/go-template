@@ -1,2 +1,5 @@
-.vscode/
 *.pb.go
+.tmp/
+.testCoverage.txt
+go-template
+
