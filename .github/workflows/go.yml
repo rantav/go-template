@@ -23,10 +23,9 @@ jobs:
     - name: Build and test
       env:
           GOPROXY: https://proxy.golang.org,direct
-          PATH: $GOPATH/bin:$PATH
       run: |
-        make test
-        make lint
+        PATH=$GOPATH/bin:$PATH make test
+        PATH=$GOPATH/bin:$PATH make lint
 
 # BEGIN __DO_NOT_INCLUDE__
     - name: Test templating
