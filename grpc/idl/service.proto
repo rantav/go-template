@@ -1,0 +1,21 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+package go_template;
+
+service GoTemplate {
+  rpc Healthcheck(google.protobuf.Empty) returns (HealthCheckResponse);
+}
+// Healthcheck (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md)
+message HealthCheckRequest {
+  string service = 1;
+}
+
+message HealthCheckResponse {
+  enum ServingStatus {
+    Unknown = 0;
+    Serving = 1;
+    NotServing = 2;
+  }
+  ServingStatus status = 1;
+}

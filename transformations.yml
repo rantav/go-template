@@ -1,0 +1,84 @@
+ignore:
+  - .git/
+  - transformations.yml
+  - .tmp/
+  - .gopath/
+  - internal/generated/
+  - .testCoverage.txt
+  - scripts/init.sh
+  - go-template
+inputs:
+  - id: name
+    text: What is the project name? (e.g. my-awesome-go-project)
+    type: text
+  - id: repo_path
+    text: What is the project repo path, without the project name? (e.g. github.com/rantav)
+    type: text
+  - id: description
+    text: What is a long project description? (long texts are OK, but no newlines)
+    type: text
+  - id: include_grpc
+    text: Should gRPC functionality be included?
+    type: yesno
+before:
+  operations:
+    - sh:
+      - rm -rf {{.destination}}
+transformations:
+  - name: include grpc - whole files
+    type: include
+    region_marker:
+    condition: .include_grpc
+    files: ["grpc/**", "cmd/test-grpc-client*.go", "admin/grpc*", "admin/tracing.go"]
+  - name: include grpc - parts of files
+    type: include
+    region_marker: __INCLUDE_GRPC__
+    condition: .include_grpc
+    files: ["Makefile", "**/*.go", "deployments/*"]
+  - name: do not include template code in the final output
+    type: include
+    region_marker: __DO_NOT_INCLUDE__
+    condition: false
+    files: ["**"]
+  - name: project description
+    type: replace
+    pattern: A template project
+    replacement: "{{ wrap 80 .description }}"
+    files: ["cmd/root.go", "README.md"]
+  - name: project path
+    type: replace
+    pattern: github.com/rantav/go-template
+    replacement: "{{ .repo_path }}/{{ .name }}"
+    files: ["*.go", "**/*.go", "go.mod", "go.sum", "Makefile"]
+  - name: project name
+    type: replace
+    pattern: go-template
+    replacement: "{{ .name }}"
+    files: ["*.go", "**/*.go", "**/*.sh", ".gitignore", "README.md", "deployments/msp-env.json"]
+  - name: project name in gRPC
+    type: replace
+    pattern: GoTemplate
+    replacement: "{{ .name | snakecase | camelcase }}"
+    files: ["**/*.go", "grpc/idl/service.proto"]
+  - name: project name in gRPC proto
+    type: replace
+    pattern: go_template
+    replacement: "{{ .name | snakecase }}"
+    files: ["grpc/idl/service.proto"]
+  - name: project name in gRPC proto - java
+    type: replace
+    pattern: goTemplate
+    replacement: "{{ .name | snakecase | camelcase | swapcase | title | swapcase}}"
+    files: ["grpc/idl/service.proto"]
+  - name: build with protoc or not
+    type: replace
+    pattern: "build: protoc"
+    replacement: "{{ if .include_grpc }}build: protoc{{ else }}build:{{end}}"
+    files: ["Makefile"]
+after:
+  operations:
+    - sh:
+      - cd {{.destination}} && gofmt -s -w .
+      - cd {{.destination}} && goimports -w .
+      - cd {{.destination}} && make build
+      - cd {{.destination}} && make tidy
