@@ -1,6 +1,8 @@
 <!-- BEGIN __DO_NOT_INCLUDE__ -->
 # Welcome to go-template
 
+[![Actions Status](https://github.com/rantav/go-template/workflows/Go/badge.svg)](https://github.com/rantav/go-template/actions)
+
 This project will jumpstart your Golang project and provide a set of tempaltes you may use to keep your code tidy and consistent.
 
 ## TLDR
