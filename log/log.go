@@ -12,6 +12,6 @@ func Setup(useJSON bool) {
 	if useJSON {
 		log.Logger = zerolog.New(os.Stderr).With().Timestamp().Logger()
 	} else {
-		log.Logger = log.Output(zerolog.ConsoleWriter{})
+		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 	}
 }
